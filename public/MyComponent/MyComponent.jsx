@@ -105,32 +105,32 @@ export default class MyComponent extends React.Component {
         const date = Date.now();
         let events = [{
             title:'Fed Announcement', 
-            date: date + 20000,
+            date: date + 5001,
             url: 'google.com'
             },
             {
             title: 'Jobs reports',
-            date: date + 50000,
+            date: date + 10004,
             url: 'google.com'
             },
             {
             title: 'Company X Share Holder Report',
-            date: date + 50000,
+            date: date + 20009,
             url: 'google.com'
-            }].map((item, index) => <SubComponentA key={index} hello={item.title} />);
+            }].map((item, index) => <SubComponentA key={index} evt={item} />);
 
         return (
 
 		<div className='my-component'>
             <h3> Event Subscriber </h3>
             <br/>
-            <input placeholder="Type your name" style={{width:'50%'}} type="text" value={this.state.userName} onChange={this.assetFieldChanged.bind(this)}></input>
-            <br/>
-            <p style={{color:'white'}}>Welcome: {this.state.userName} </p>
             <div>
                 {events}
             </div>
         </div>
-	    );
-  	}
+        );
+    }
 }
+            // <input placeholder="Type your name" style={{width:'50%'}} type="text" value={this.state.userName} onChange={this.assetFieldChanged.bind(this)}></input>
+            // <br/>
+            // <p style={{color:'white'}}>Welcome: {this.state.userName} </p>

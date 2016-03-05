@@ -30,6 +30,6 @@ gulp.task('sass', function() {
 
 //watch scss and jsx files
 gulp.task('watch', function(){
-	gulp.watch('./MyComponent/**/*.jsx', ['build']);
-  gulp.watch('./MyComponent/sass/**/*.scss', ['styles']);
+	gulp.watch('./**/*.jsx', ['build']);
+  gulp.watch('./**/*.scss', ['styles']);
 });

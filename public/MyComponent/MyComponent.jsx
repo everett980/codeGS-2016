@@ -81,6 +81,16 @@ export default class MyComponent extends React.Component {
         });
     }
 
+    addSubscription(event) {
+        var subscribedEvents = [];
+
+
+    }
+
+    // possibleEvents() {
+    //     var ['Fed Announcement', 'Jobs reports'];
+    // }
+
 	/**
 	 * Create component HTML
 	 * @return {[type]} [description]
@@ -88,11 +98,13 @@ export default class MyComponent extends React.Component {
   	render() {
 	    return (
 		<div className='my-component'>
-              <h2> This is Evereit </h2>
+              <h3> Event Subscriber </h3>
             <br/>
             <input placeholder="Type your name" style={{width:'50%'}} type="text" value={this.state.userName} onChange={this.assetFieldChanged.bind(this)}></input>
             <br/>
             <p style={{color:'white'}}>Welcome: {this.state.userName} </p>
+
+            <SubComponentA hello="something" />
         </div>
 	    );
   	}

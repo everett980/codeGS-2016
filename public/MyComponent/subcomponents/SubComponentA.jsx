@@ -16,7 +16,7 @@ export default class SubComponentA extends React.Component {
   		var styleSpan = {
   			color : 'white',
 			width: '66%',
-			float: 'left' 			
+			float: 'left'
   		};
   		var title = this.props.evt.title;
   		var options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }

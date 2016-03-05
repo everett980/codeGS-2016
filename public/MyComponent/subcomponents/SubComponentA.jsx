@@ -18,7 +18,8 @@ export default class SubComponentA extends React.Component {
     	var date = new Date(+this.props.evt.date).toLocaleDateString('en-US', options);
 
 	    return (
-	    	<div class="row">
+	    	<div>
+	    	<div class="row" id={title.slice(0,2)}>
 	    		<p style={styleSpan} class="col-xs-8">
 			    	<span> 
 			    		{title}
@@ -28,20 +29,21 @@ export default class SubComponentA extends React.Component {
 			    	</span>
 			    </p>
 			    <div className="col-xs-4">
-			    	<button className="btn btn-submit btn-xs" onClick={this.subscribe.bind(this)}>
+			    	<button id={title.slice(0,1)} className="btn btn-submit btn-xs" onClick={this.subscribe.bind(this)}>
 			    		Subscribe
 			    	</button>
 		    	</div>
+	    	</div>
 	    	</div>
 	    );
   	}
 	subscribe () {
 		let evt = this.props.evt
 		setTimeout(function () {
-            alert(evt.title + " is happening now, at " + evt.url);
+            <h4>evt.title</h4>
+			$( "#" + evt.title.slice(0,2) ).append('<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe></div></div><div class="col-sm-6">');
         }, evt.date - Date.now())
-
-		alert('You have subscribed');
+		$( "#" + evt.title.slice(0,1) ).html("Unsubscribe");
 		console.log(this.props.evt.date - Date.now());
 
 		//change button to say subscribed

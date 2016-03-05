@@ -110,7 +110,7 @@ export default class MyComponent extends React.Component {
 
 		<div className='my-component'>
             <br/>
-            <h3> Event Subscriber </h3>
+            <h4> Event Subscriber </h4>
             <br/>
             <div>
                 {events}

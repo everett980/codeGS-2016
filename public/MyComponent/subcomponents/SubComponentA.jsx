@@ -1,5 +1,7 @@
 
 import React from 'react';
+
+var subscribed = false;
  
 export default class SubComponentA extends React.Component {
 
@@ -36,17 +38,25 @@ export default class SubComponentA extends React.Component {
 				    	</button>
 			    	</div>
 		    	</div>
+		    	<br/>
 	    	</div>
 	    );
   	}
 	subscribe () {
 		let evt = this.props.evt
-		setTimeout(function () {
-            <h4>evt.title</h4>
-			$( "#" + evt.title.slice(0,2) ).append('<div class="embed-responsive embed-responsive-16by9" style="clear:both"><iframe class="embed-responsive-item" src="//www.youtube.com/embed/4BmRUkjyYcA"></iframe></div></div><div class="col-xs-12">');
-        }, evt.date - Date.now())
-		$( "#" + evt.title.slice(0,1) ).html("Unsubscribe");
-		console.log(this.props.evt.date - Date.now());
+		if (!subscribed) {
+			subscribed = !subscribed;
+			var subscription = setTimeout(function () {
+	            <h4>evt.title</h4>
+				$( "#" + evt.title.slice(0,2) ).append('<div class="embed-responsive embed-responsive-16by9" style="clear:both"><iframe class="embed-responsive-item" src="//www.youtube.com/embed/4BmRUkjyYcA"></iframe></div></div><div class="col-xs-12">');
+	        }, evt.date - Date.now())
+			$( "#" + evt.title.slice(0,1) ).html("Unsubscribe");
+			console.log(this.props.evt.date - Date.now());
+		} else {
+			clearTimeout(subscription);
+			subscribed = !subscribed;
+			$( "#" + evt.title.slice(0,1) ).html("Subscribe");
+		}
 
 		//change button to say subscribed
 		//have an event created that waits until the appropriate dateTime

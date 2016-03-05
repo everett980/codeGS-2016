@@ -88,40 +88,28 @@ export default class MyComponent extends React.Component {
 
     }
 
-    // getInitialState() {
-    //     return {events: ['Fed Announcement', 'Jobs reports']};
-    // }
-
-
-    // possibleEvents() {
-    //     var ['Fed Announcement', 'Jobs reports'];
-    // }
-
-	/**
-	 * Create component HTML
-	 * @return {[type]} [description]
-	 */
   	render() {
         const date = Date.now();
         let events = [{
-            title:'Fed Announcement', 
+            title:'Federal Reserve NY Risk Management', 
             date: date + 5001,
-            url: 'google.com'
+            url: "//www.youtube.com/embed/4BmRUkjyYcA"
             },
             {
             title: 'Jobs reports',
-            date: date + 10004,
-            url: 'google.com'
+            date: date + 30004,
+            url: "//www.youtube.com/embed/ePbKGoIGAXY"
             },
             {
             title: 'Company X Share Holder Report',
-            date: date + 20009,
-            url: 'google.com'
+            date: date + 60009,
+            url: "//www.youtube.com/embed/ePbKGoIGAXY"
             }].map((item, index) => <SubComponentA key={index} evt={item} />);
 
         return (
 
 		<div className='my-component'>
+            <br/>
             <h3> Event Subscriber </h3>
             <br/>
             <div>

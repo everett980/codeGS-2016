@@ -88,6 +88,7 @@ export default class MyComponent extends React.Component {
   	render() {
 	    return (
 		<div className='my-component'>
+              <h2> This is Evereit </h2>
             <br/>
             <input placeholder="Type your name" style={{width:'50%'}} type="text" value={this.state.userName} onChange={this.assetFieldChanged.bind(this)}></input>
             <br/>

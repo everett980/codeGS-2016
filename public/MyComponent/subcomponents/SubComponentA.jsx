@@ -9,10 +9,10 @@ export default class SubComponentA extends React.Component {
 	subscribe () {
 		alert('We are subscribing!');
 	}
-	
+
   	render() {
 	    return (
-	    	<p style={{color : 'red'}}> Subcomponent: {this.props.title}</p> 
+	    	<p style={{color : 'red'}}> {this.props.title} on {this.props.date}</p> 
 	    	<button class="btn btn-submit" onClick="{this.subscribe.bind(this)}">Subscribe</button>
 	    );
   	}

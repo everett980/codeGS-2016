@@ -24,6 +24,7 @@ export default class MyComponent extends React.Component {
     componentDidMount() {
         var state = this.props.meta.state;
         this.setState(state);
+        this.events = ['Fed Announcement', 'Jobs reports'];
     }
 
     // ---------------------------------------------------
@@ -87,6 +88,11 @@ export default class MyComponent extends React.Component {
 
     }
 
+    // getInitialState() {
+    //     return {events: ['Fed Announcement', 'Jobs reports']};
+    // }
+
+
     // possibleEvents() {
     //     var ['Fed Announcement', 'Jobs reports'];
     // }
@@ -96,15 +102,34 @@ export default class MyComponent extends React.Component {
 	 * @return {[type]} [description]
 	 */
   	render() {
-	    return (
+        const date = Date.now();
+        let events = [{
+            title:'Fed Announcement', 
+            date: date + 20000,
+            url: 'google.com'
+            },
+            {
+            title: 'Jobs reports',
+            date: date + 50000,
+            url: 'google.com'
+            },
+            {
+            title: 'Company X Share Holder Report',
+            date: date + 50000,
+            url: 'google.com'
+            }].map((item, index) => <SubComponentA key={index} hello={item.title} />);
+
+        return (
+
 		<div className='my-component'>
-              <h3> Event Subscriber </h3>
+            <h3> Event Subscriber </h3>
             <br/>
             <input placeholder="Type your name" style={{width:'50%'}} type="text" value={this.state.userName} onChange={this.assetFieldChanged.bind(this)}></input>
             <br/>
             <p style={{color:'white'}}>Welcome: {this.state.userName} </p>
-
-            <SubComponentA hello="something" />
+            <div>
+                {events}
+            </div>
         </div>
 	    );
   	}

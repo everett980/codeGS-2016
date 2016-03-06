@@ -43,3 +43,4 @@ Gulp allows you to compile the react code to javascript code. Gulp also compiles
 
     ````gulp watch ````
 
+Any questions? Contact Nick: nicholas.ginsberg@gs.com
